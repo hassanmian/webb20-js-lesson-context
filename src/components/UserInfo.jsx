@@ -1,8 +1,12 @@
 import React from 'react'
 import FirstName from './FirstName'
+import LastName from './LastName'
 
-export default function UserInfo({firstName, lastName}) {
+export default function UserInfo() {
   return (
-      <FirstName firstName={firstName} />
+    <>
+      <FirstName />
+      <LastName />
+    </>
   )
 }

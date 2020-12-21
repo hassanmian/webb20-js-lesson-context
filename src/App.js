@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import UserInfo from './components/UserInfo'
+import { UserContext } from './contexts/UserContext';
 
 function App() {
   const [firstName, setFirstName] = useState("John")
@@ -7,7 +8,11 @@ function App() {
 
   return (
     <div >
-      <UserInfo firstName={firstName} lastName={lastName}/>
+      <UserContext.Provider value={{firstName, setFirstName, lastName, setLastName}}>
+        <UserInfo />
+        <hr/>
+        {firstName} {lastName}
+      </UserContext.Provider>
     </div>
   );
 }
